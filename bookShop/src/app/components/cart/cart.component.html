@@ -1,0 +1,7 @@
+<p>Cart</p>
+<app-cart-item
+*ngFor="let book of booksForCartComponent"
+[bookForCartItem]="book"
+(deletedBook)="deleteBookFromArray($event)"
+>
+</app-cart-item>

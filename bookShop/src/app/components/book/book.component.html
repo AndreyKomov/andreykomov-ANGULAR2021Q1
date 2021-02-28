@@ -1,0 +1,15 @@
+<p>{{element.name}}</p>
+<p>{{element.description}}</p>
+<p>{{element.price}}$</p>
+<p>{{element.category}}</p>
+<p>{{element.createDate}} year</p>
+<button
+type="button"
+[disabled]="!element.isAvailable"
+[ngClass]="{'non-active': !element.isAvailable}"
+(click)="onBuy()"
+>
+Buy
+</button>
+<!-- [disabled]="!element.isAvailable"    для атрибутов
+[ngClass]="{'non-active': !element.isAvailable}" с помощью css-->

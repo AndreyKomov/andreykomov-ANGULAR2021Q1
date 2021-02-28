@@ -1,0 +1,13 @@
+p {
+  margin: 0;
+}
+
+button {
+  margin-bottom: 19px;
+}
+
+.non-active {
+  pointer-events: none;
+  opacity: 0.5;
+  background: grey;
+}
