@@ -1,8 +1,10 @@
-<p>{{element.name}}</p>
-<p>{{element.description}}</p>
-<p>{{element.price}}$</p>
-<p>{{element.category}}</p>
-<p>{{element.createDate}} year</p>
+<ul>
+  <li>{{element.name}}</li>
+  <li>{{element.description}}</li>
+  <li>{{element.price}}$</li>
+  <li>{{element.category}}</li>
+  <li>{{element.createDate}} year</li>
+</ul>
 <button
 type="button"
 [disabled]="!element.isAvailable"

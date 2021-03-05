@@ -1,15 +1,5 @@
 <h1 #appTitle>Hello!</h1>
 
-<app-book
-*ngFor="let bookItem of booksArray"
-[element]="bookItem"
-(getBook)="putBookToCart($event)"
->
-</app-book>
+<app-books-list></app-books-list>
 
-<app-cart
-[booksForCartComponent]="itemArray"
-(cartItemDeletedBook)="deleteBook($event)"
->
-</app-cart>
-<!-- *ngFor -->
+<app-cart></app-cart>

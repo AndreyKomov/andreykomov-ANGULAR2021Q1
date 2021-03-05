@@ -10,14 +10,14 @@ export class BookComponent implements OnInit {
 
   @Input() element: BookModel = {} as any;
 
-  @Output() getBook = new EventEmitter();
+  @Output() putBookToCart = new EventEmitter();
 
   ngOnInit(): void {
   }
 
   onBuy(): void {
     console.log('Buy');
-    this.getBook.emit(this.element);              // вызвал эмиттер
+    this.putBookToCart.emit(this.element);              // вызвал эмиттер
   }
 
 }

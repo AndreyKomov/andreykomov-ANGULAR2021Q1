@@ -1,7 +1,9 @@
-<p>Cart</p>
+<p>Total quantity: {{cartServ.totalQuantity}}</p>
 <app-cart-item
-*ngFor="let book of booksForCartComponent"
+*ngFor="let book of cartServ.cartProduct"
 [bookForCartItem]="book"
 (deletedBook)="deleteBookFromArray($event)"
 >
 </app-cart-item>
+
+<app-about></app-about>

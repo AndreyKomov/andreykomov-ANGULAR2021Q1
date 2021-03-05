@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 @Component({
   selector: 'app-cart-item',
@@ -7,21 +8,23 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class CartItemComponent implements OnInit {
 
+  constructor(public cartServ: CartService) { }
+
   @Input() bookForCartItem: any;
   @Output() deletedBook = new EventEmitter();
 
   ngOnInit(): void {
   }
 
-  plusBook() {
-    this.bookForCartItem.quantity++;
+  plusBook(): void {
+    this.cartServ.increaseQuantity(this.bookForCartItem);
   }
 
   minusBook() {
     if (this.bookForCartItem.quantity === 1) {
-      this.deletedBook.emit(this.bookForCartItem);
+      this.cartServ.removeBook(this.bookForCartItem);
     } else {
-      this.bookForCartItem.quantity--;
+      this.cartServ.decreaseQuantity(this.bookForCartItem);
     }
   }
 }
