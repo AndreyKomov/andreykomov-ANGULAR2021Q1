@@ -1,6 +1,6 @@
 <div class="books-list">
   <app-book
-    *ngFor="let bookItem of booksListForApp"
+    *ngFor="let bookItem of booksServ.getBooks() | async"
     [element]="bookItem"
     (putBookToCart)="putBookToCart($event)"
   >

@@ -15,6 +15,6 @@ export class GeneratorService {
 }
 
 export function GeneratorFactory(n: number) {
-  let str = 'abc';
+  const str = 'abc';
   return new GeneratorService(str);
 }

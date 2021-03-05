@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { BookModel, BooksCategories } from '../models/BookModel';
+import { Observable, of } from 'rxjs';
+import { BooksCategories } from '../models/BookModel';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BooksService {
 
-  booksArray: BookModel[] = [{
+  booksArray: any = [{
     name: 'John Vayne',
     description: 'The story about John Vayne',
     price: 10,
@@ -48,7 +49,10 @@ export class BooksService {
   },
   ];
 
-  getBooks() {
-    return this.booksArray;
+  getBooks(): any {
+    return new Observable<any>(observer => {
+      observer.next(this.booksArray);
+    });
+    // return this.booksArray;
   }
 }

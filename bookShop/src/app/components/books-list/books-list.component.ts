@@ -17,7 +17,6 @@ export class BooksListComponent implements OnInit {
   booksListForApp: BookModel[] = [];
 
   ngOnInit(): void {
-    this.booksListForApp = this.booksServ.getBooks();
   }
 
   putBookToCart(book: any) {
