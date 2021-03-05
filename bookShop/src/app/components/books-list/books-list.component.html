@@ -1,7 +1,8 @@
 <div class="books-list">
   <app-book
-  *ngFor="let bookItem of booksListForApp"
-  [element]="bookItem"
-  (putBookToCart)="putBookToCart($event)"
-  ></app-book>
+    *ngFor="let bookItem of booksListForApp"
+    [element]="bookItem"
+    (putBookToCart)="putBookToCart($event)"
+  >
+</app-book>
 </div>

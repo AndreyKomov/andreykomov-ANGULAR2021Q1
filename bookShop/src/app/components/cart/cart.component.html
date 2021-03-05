@@ -1,7 +1,13 @@
 <p>Total quantity: {{cartServ.totalQuantity}}</p>
-<app-cart-item
-*ngFor="let book of cartServ.cartProduct"
-[bookForCartItem]="book"
-(deletedBook)="deleteBookFromArray($event)"
+<div *ngIf="cartServ.cartProduct.length; else elseCartEmpty">
+  <app-cart-item
+    *ngFor="let book of cartServ.cartProduct"
+    [bookForCartItem]="book"
+    (deletedBook)="deleteBookFromArray($event)"
 >
 </app-cart-item>
+</div>
+
+<ng-template #elseCartEmpty>The cart is empty!</ng-template>
+
+
