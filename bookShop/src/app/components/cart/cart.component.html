@@ -1,4 +1,5 @@
 <p>Total quantity: {{cartServ.totalQuantity}}</p>
+<p>Total cost: {{cartServ.totalSum}}</p>
 <div *ngIf="cartServ.cartProduct.length; else elseCartEmpty">
   <app-cart-item
     *ngFor="let book of cartServ.cartProduct | orderBy:'category':true"
