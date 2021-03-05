@@ -17,8 +17,10 @@ export class CartService {
     const targetBook = this.cartProduct.find((el: any) => el.name === book.name);
     if (targetBook) {
       targetBook.quantity++;
+      this.totalSum += book.price;
     } else {
       book.quantity = 1;
+      this.totalSum += book.price;
       this.cartProduct.push(book);
     }
     this.emitCart.emit(this.cartProduct);
@@ -27,16 +29,19 @@ export class CartService {
 
   removeBook(book: any): any {
     this.cartProduct = this.cartProduct.filter((el: any) => el.name !== book.name);
+    this.totalSum -= book.price;
     this.totalQuantity--;
   }
 
   increaseQuantity(book: any): any {
     book.quantity++;
+    this.totalSum += book.price;
     this.totalQuantity++;
   }
 
   decreaseQuantity(book: any): any {
     book.quantity--;
+    this.totalSum -= book.price;
     this.totalQuantity--;
   }
 

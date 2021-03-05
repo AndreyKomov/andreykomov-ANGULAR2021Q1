@@ -15,6 +15,10 @@ export class GeneratorService {
 }
 
 export function GeneratorFactory(n: number) {
-  let str = 'abc';
-  return new GeneratorService(str);
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghigklmnopqrstuvwxyz0123456789';
+  let resultString = '';
+  for (let i=0; i < n; i++) {
+    resultString += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+  }
+  return new GeneratorService(resultString);
 }
