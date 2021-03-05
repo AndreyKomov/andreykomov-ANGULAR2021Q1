@@ -3,26 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BookComponent } from './components/book/book.component';
-import { CartComponent } from './components/cart/cart.component';
-import { CartItemComponent } from './components/cart-item/cart-item.component';
-import { BooksListComponent } from './components/books-list/books-list.component';
 import { CartListComponent } from './components/cart-list/cart-list.component';
 import { AboutComponent } from './layout/components/about/about.component';
+import { CartModule } from './cart/cart.module';
+import { SharedModule } from './shared/shared.module';
+import { BooksModule } from './books/books.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent,
-    CartComponent,
-    CartItemComponent,
-    BooksListComponent,
     CartListComponent,
     AboutComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CartModule,
+    SharedModule,
+    BooksModule
   ],
   providers: [],
   bootstrap: [AppComponent]
