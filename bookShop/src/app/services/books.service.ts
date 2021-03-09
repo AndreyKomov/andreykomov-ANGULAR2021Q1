@@ -14,6 +14,7 @@ export class BooksService {
     category: BooksCategories.Western,
     createDate: 1850,
     isAvailable: true,
+    id: 1,
   },
   {
     name: 'Frodo Bagins',
@@ -22,6 +23,7 @@ export class BooksService {
     category: BooksCategories.Fantasy,
     createDate: 2020,
     isAvailable: false,
+    id: 2,
   },
   {
     name: 'Magic in Grons',
@@ -30,6 +32,7 @@ export class BooksService {
     category: BooksCategories.Fantasy,
     createDate: 2020,
     isAvailable: true,
+    id: 3,
   },
   {
     name: 'I shot the sheriff',
@@ -38,6 +41,7 @@ export class BooksService {
     category: BooksCategories.Fantasy,
     createDate: 2020,
     isAvailable: true,
+    id: 4,
   },
   {
     name: 'Small ice',
@@ -46,6 +50,7 @@ export class BooksService {
     category: BooksCategories.Fantasy,
     createDate: 2020,
     isAvailable: true,
+    id: 5,
   },
   ];
 
@@ -54,5 +59,9 @@ export class BooksService {
       observer.next(this.booksArray);
     });
     // return this.booksArray;
+  }
+
+  getBookById(id: number): any {
+    return this.booksArray.find((el: any) => el.id === id);
   }
 }

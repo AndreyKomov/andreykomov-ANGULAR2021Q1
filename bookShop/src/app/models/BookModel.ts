@@ -6,6 +6,7 @@ export interface BookModel {
   createDate: number;
   isAvailable: boolean;
   quantity?: number;
+  id: number;
 }
 
 interface MyObject {

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { BookModel } from 'src/app/models/BookModel';
 
 @Component({
@@ -7,6 +8,7 @@ import { BookModel } from 'src/app/models/BookModel';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
+  constructor(public router: Router) {}
 
   @Input() element: BookModel = {} as any;
 
@@ -18,6 +20,11 @@ export class BookComponent implements OnInit {
   onBuy(): void {
     console.log('Buy');
     this.putBookToCart.emit(this.element);              // вызвал эмиттер
+    this.router.navigate(['/cart']);
+  }
+
+  showBookCard() {
+    this.router.navigate(['/product', this.element.id]);
   }
 
 }

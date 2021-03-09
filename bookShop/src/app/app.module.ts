@@ -8,12 +8,14 @@ import { AboutComponent } from './layout/components/about/about.component';
 import { CartModule } from './cart/cart.module';
 import { SharedModule } from './shared/shared.module';
 import { BooksModule } from './books/books.module';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CartListComponent,
     AboutComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

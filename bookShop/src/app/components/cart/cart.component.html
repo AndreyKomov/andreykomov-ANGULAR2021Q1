@@ -2,12 +2,16 @@
 <p>Total cost: {{cartServ.totalSum}}</p>
 <div *ngIf="cartServ.cartProduct.length; else elseCartEmpty">
   <app-cart-item
-    *ngFor="let book of cartServ.cartProduct | orderBy:'category':true"
+    *ngFor="let book of cartServ.cartProduct | orderBy:'name':true"
     [bookForCartItem]="book"
     (deletedBook)="deleteBookFromArray($event)"
 >
 </app-cart-item>
 </div>
+
+<button (click)="goBackToBooksList()">Back to books list</button>
+
+<button (click)="goToOrderPage()">Order!!!!!</button>
 
 <ng-template #elseCartEmpty>The cart is empty!</ng-template>
 

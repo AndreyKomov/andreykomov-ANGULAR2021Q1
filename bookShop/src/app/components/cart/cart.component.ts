@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CartService } from 'src/app/services/cart/cart.service';
 
@@ -9,7 +10,7 @@ import { CartService } from 'src/app/services/cart/cart.service';
 })
 export class CartComponent implements OnInit, OnDestroy {
 
-  constructor(public cartServ: CartService) { }
+  constructor(public cartServ: CartService, public router: Router) { }
 
   subscript: Subscription;
   ngOnInit(): void {
@@ -18,12 +19,20 @@ export class CartComponent implements OnInit, OnDestroy {
     });
   }
 
-  deleteBookFromArray(book: any) {
-    this.cartServ.removeBook(book);
+  goBackToBooksList() {
+    this.router.navigate(['product-list']);
   }
 
   ngOnDestroy() {
     this.subscript.unsubscribe();    // for unsubscribe;
+  }
+
+  deleteBookFromArray(book: any) {
+    this.cartServ.removeBook(book);
+  }
+
+  goToOrderPage() {
+    this.router.navigate(['order']);
   }
 
 }
