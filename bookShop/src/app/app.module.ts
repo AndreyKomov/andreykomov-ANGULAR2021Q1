@@ -9,13 +9,15 @@ import { CartModule } from './cart/cart.module';
 import { SharedModule } from './shared/shared.module';
 import { BooksModule } from './books/books.module';
 import { AdminComponent } from './components/admin/admin.component';
+import { IsAdminComponent } from './components/is-admin/is-admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CartListComponent,
     AboutComponent,
-    AdminComponent
+    AdminComponent,
+    IsAdminComponent
   ],
   imports: [
     BrowserModule,
