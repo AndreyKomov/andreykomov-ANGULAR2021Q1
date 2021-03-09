@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { BackendService } from 'src/app/backend.service';
 import { BookModel } from 'src/app/models/BookModel';
+
 
 @Component({
   selector: 'app-book',
@@ -8,13 +10,14 @@ import { BookModel } from 'src/app/models/BookModel';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
-  constructor(public router: Router) {}
+  constructor(public router: Router, public httpServ: BackendService) {}
 
   @Input() element: BookModel = {} as any;
 
   @Output() putBookToCart = new EventEmitter();
 
   ngOnInit(): void {
+
   }
 
   onBuy(): void {

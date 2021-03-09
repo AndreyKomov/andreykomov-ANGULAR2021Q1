@@ -9,6 +9,7 @@ import { CartModule } from './cart/cart.module';
 import { SharedModule } from './shared/shared.module';
 import { BooksModule } from './books/books.module';
 import { AdminComponent } from './components/admin/admin.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminComponent } from './components/admin/admin.component';
     AppRoutingModule,
     CartModule,
     SharedModule,
-    BooksModule
+    BooksModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
