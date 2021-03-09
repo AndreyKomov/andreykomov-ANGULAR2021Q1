@@ -1,2 +1,11 @@
-<p>book-card works!</p>
-<div class="book">{{book.name}}</div>
+<div class="book-card">
+  <h2 class="book">{{book.name}}</h2>
+  <h2 class="book">{{book.description}}</h2>
+  <h2 class="book">Price: {{book.price}}$</h2>
+  <h2 class="book">Category: {{book.category}}</h2>
+  <h2 class="book">Year of publication: {{book.createDate}}</h2>
+  <img src="../../../assets/img/book-brain.jpg" alt="book" width="25%">
+</div>
+
+
+<button (click)="backToBooksList()">Back to books list</button>

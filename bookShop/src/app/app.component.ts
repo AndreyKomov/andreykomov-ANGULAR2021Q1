@@ -14,7 +14,6 @@ export class AppComponent implements AfterViewInit, OnInit {
   title = 'bookShop';
 
   ngOnInit() {
-    this.router.navigate(['/product-list']);
   }
 
   ngAfterViewInit() {

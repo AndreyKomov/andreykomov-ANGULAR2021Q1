@@ -1,5 +1,6 @@
 import { Component, OnInit, } from '@angular/core';
 import { BackendService } from 'src/app/backend.service';
+import { Router } from '@angular/router';
 import { BookModel } from 'src/app/models/BookModel';
 import { BooksService } from 'src/app/services/books.service';
 import { CartService } from 'src/app/services/cart/cart.service';
@@ -14,6 +15,7 @@ export class BooksListComponent implements OnInit {
     public booksServ: BooksService,
     public cartServ: CartService,
     public httpServ: BackendService
+    public router: Router
     ) {}
 
   booksListForApp: BookModel[] = [];
@@ -28,5 +30,9 @@ export class BooksListComponent implements OnInit {
 
   putBookToCart(book: any) {
     this.cartServ.addBook(book);
+  }
+
+  showAdminPage() {
+    this.router.navigate(['isAdmin']);
   }
 }
