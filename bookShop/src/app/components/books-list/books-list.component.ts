@@ -14,7 +14,7 @@ export class BooksListComponent implements OnInit {
   constructor(
     public booksServ: BooksService,
     public cartServ: CartService,
-    public httpServ: BackendService
+    public httpServ: BackendService,
     public router: Router
     ) {}
 
