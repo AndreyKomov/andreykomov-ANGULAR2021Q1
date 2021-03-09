@@ -14,7 +14,7 @@ export class IsAdminService {
       this.isAdmin = true;
     } else {
       this.isAdmin = false;
-      alert('incorrect name')
+      alert('incorrect name');
     }
   }
 }
