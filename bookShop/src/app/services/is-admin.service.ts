@@ -7,7 +7,7 @@ export class IsAdminService {
 
   constructor() { }
 
-  isAdmin: boolean = true;
+  isAdmin: boolean = false;
 
   getAdminName(name: string) {
     if (name === 'admin') {
