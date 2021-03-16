@@ -12,6 +12,8 @@ import { plusDollar } from 'src/app/cart.actions';
 })
 export class CartComponent implements OnInit, OnDestroy {
   cart$: Observable<any>;
+  totalQuantity: number = 0;
+  totalSum: number = 0;
 
   constructor(
     public cartServ: CartService,
@@ -25,10 +27,16 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   subscript: Subscription;
+  dataSubscript: Subscription;
   ngOnInit(): void {
     this.subscript = this.cartServ.emitCart.subscribe(cart => {      // for passing from cartService
       console.log(cart);
     });
+
+    this.dataSubscript = this.cartServ.updatingData.subscribe(data => {
+      this.totalQuantity = data.totalQuantity;
+      this.totalSum = data.totalSum;
+    })
   }
 
   goBackToBooksList() {
@@ -37,6 +45,7 @@ export class CartComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscript.unsubscribe();    // for unsubscribe;
+    this.dataSubscript.unsubscribe();
   }
 
   deleteBookFromArray(book: any) {

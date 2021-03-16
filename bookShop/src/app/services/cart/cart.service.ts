@@ -8,6 +8,7 @@ export class CartService {
   constructor() { }
 
   emitCart = new EventEmitter();
+  updatingData = new EventEmitter();
 
   cartProduct: any = [];
   totalQuantity = 0;
@@ -37,6 +38,7 @@ export class CartService {
     book.quantity++;
     this.totalSum += book.price;
     this.totalQuantity++;
+    this.updateCartData();
   }
 
   decreaseQuantity(book: any): any {
@@ -46,6 +48,9 @@ export class CartService {
   }
 
   updateCartData(): any {
-
+    this.updatingData.emit({
+      totalQuantity: this.totalQuantity,
+      totalSum: this.totalSum
+    });
   }
 }
