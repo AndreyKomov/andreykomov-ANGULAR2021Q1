@@ -1,18 +1,21 @@
-<ul>
-  <li>{{element.name}}</li>
-  <li>{{element.description}}</li>
-  <li>{{element.price}}$</li>
-  <li>{{element.category | uppercase}}</li>
-  <li>{{element.createDate}} year</li>
-</ul>
-<button
-type="button"
-[disabled]="!element.isAvailable"
-[ngClass]="{'non-active': !element.isAvailable}"
-(click)="onBuy()"
->
-Buy
-</button>
-<button (click)="showBookCard()">Details</button>
-<!-- [disabled]="!element.isAvailable"    для атрибутов
-[ngClass]="{'non-active': !element.isAvailable}" с помощью css-->
+<div class="book">
+  <ul>
+    <li>{{element.name}}</li>
+    <li>{{element.description}}</li>
+    <li>{{element.price}}$</li>
+    <li>{{element.category | uppercase}}</li>
+    <li>{{element.createDate}} year</li>
+  </ul>
+  <button
+  type="button"
+  [disabled]="!element.isAvailable"
+  [ngClass]="{'non-active': !element.isAvailable}"
+  (click)="onBuy()"
+  >
+  Buy
+  </button>
+  <button (click)="showBookCard()">Details</button>
+  <!-- [disabled]="!element.isAvailable"    для атрибутов
+  [ngClass]="{'non-active': !element.isAvailable}" с помощью css-->
+</div>
+

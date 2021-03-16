@@ -2,10 +2,16 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+  "noImplicitAny": false,
+  "noImplicitThis": false,
+  "alwaysStrict": false,
+  "strictNullChecks": false,
+  "strictFunctionTypes": false,
+  "strictPropertyInitialization": false,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -23,9 +29,9 @@
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true,
+    "strictInjectionParameters": false,
+    "strictInputAccessModifiers": false,
+    "strictTemplates": false,
     "strictPropertyInitialization": false
   }
 }

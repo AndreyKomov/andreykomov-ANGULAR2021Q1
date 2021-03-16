@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+import { Store } from '@ngrx/store';
 import { CartService } from 'src/app/services/cart/cart.service';
+import { plusDollar } from 'src/app/cart.actions';
 
 @Component({
   selector: 'app-cart',
@@ -9,8 +11,18 @@ import { CartService } from 'src/app/services/cart/cart.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit, OnDestroy {
+  cart$: Observable<any>;
 
-  constructor(public cartServ: CartService, public router: Router) { }
+  constructor(
+    public cartServ: CartService,
+    public router: Router,
+    private store: Store<{ cart: any[] }>
+  ) {
+    this.cart$ = store.select('cart');
+    this.cart$.subscribe(
+      currentCart => console.log(currentCart)
+    );
+  }
 
   subscript: Subscription;
   ngOnInit(): void {
@@ -33,6 +45,11 @@ export class CartComponent implements OnInit, OnDestroy {
 
   goToOrderPage() {
     this.router.navigate(['order']);
+    this.plusDollar();
+  }
+
+  plusDollar() {
+    this.store.dispatch(plusDollar());
   }
 
 }

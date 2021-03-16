@@ -3,5 +3,16 @@ body {
   background: ivory;
     button {
       font-size: 19px;
+      background: silver;
+      color: midnightblue;
+      font-weight: 900;
+      border: solid 2px green;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      cursor: pointer;
     }
 }

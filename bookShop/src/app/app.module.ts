@@ -11,6 +11,8 @@ import { BooksModule } from './books/books.module';
 import { AdminComponent } from './components/admin/admin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IsAdminComponent } from './components/is-admin/is-admin.component';
+import { StoreModule } from '@ngrx/store';
+import { cartReducer } from './cart.reducer';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { IsAdminComponent } from './components/is-admin/is-admin.component';
     SharedModule,
     BooksModule,
     HttpClientModule,
+    StoreModule.forRoot({ cart: cartReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent]

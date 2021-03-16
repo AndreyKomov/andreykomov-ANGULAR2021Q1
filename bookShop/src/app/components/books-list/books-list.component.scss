@@ -1,4 +1,9 @@
 .books-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 390px 390px;
+
+    button {
+      width: 100px;
+      height: 50px;
+    }
 }

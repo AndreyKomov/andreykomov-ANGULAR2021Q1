@@ -1,13 +1,21 @@
-p {
-  margin: 0;
-}
+.book {
+  width: 250px;
+  background: linear-gradient(#E8B6FA, #ADEDFA);
+  border: dashed 2px green;
+  border-radius: 10%;
+  margin-bottom: 10px;
+  font-weight: 700;
+    p {
+      margin: 0;
+    }
 
-button {
-  margin-bottom: 14px;
-}
+    button {
+      margin-bottom: 10px;
+    }
 
-.non-active {
-  pointer-events: none;
-  opacity: 0.5;
-  background: grey;
+    .non-active {
+      pointer-events: none;
+      opacity: 0.5;
+      background: grey;
+    }
 }
